@@ -91,6 +91,9 @@ Troubleshooting the Build
 1. If executing mvn returns "java.lang.OutOfMemoryError: Java heap space",
    you should set MAVEN_OPTS to "-Xmx512m -Xms256m -XX:MaxPermSize=512m".
 
+2. If you build on Windows, your distribution will only run on
+   Windows.  If you build on Unix, your distribution will only run on
+   Unix or in a shell emulator on Windows.
 
 Documentation
 -------------
