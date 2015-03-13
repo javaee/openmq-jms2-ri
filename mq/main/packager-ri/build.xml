@@ -70,6 +70,7 @@
     </symlink>
 </target>
 
+<!-- This sets the propert allIsWell if gfri is true, otherwise is does not set it -->
 <target name="setup-true">
     <condition property="allIsWell">
     <not>
@@ -78,11 +79,13 @@
     </condition>
 </target>
 
+<!-- This target is executed if the property gfri is not set -->
 <target name="all-mq-ri" depends="setup-true" if="allIsWell">
         <echo message="##### calling all-mq-ri MQ Standalone RI =${gfri}"/>
 	<antcall target="all-ri"/>
 </target>
 
+<!-- This target is executed if the property gfri is set -->
 <target name="all-gfmq-ri" depends="setup-true" unless="allIsWell">
         <echo message="##### calling all-mqgf-ri MQ RI for GF gfri=${gfri}"/>
 	<antcall target="all-mqgf-ri"/>
